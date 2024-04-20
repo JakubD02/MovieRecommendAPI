@@ -1,14 +1,20 @@
 {% extends 'base.html' %}
 {% block content %}
 	<center>
-	<h1>5 Polecanych filmów:</h1>
-		<br/><br/><br/>
-  <select class="form-select" aria-label="Default select example" style="width: 25%; padding: 10px; font-size: 16px; border-radius: 5px;">
-    <option selected disabled>Select Language</option>
-    <option value="1">ES - Spanish</option>
-    <option value="2">EN - English</option>
-  </select>
+	<h1>5 Polecanych filmów:</h1><br/><br/><br/>
+  	<select class="form-select" aria-label="Default select example" style="width: 33%; padding: 10px; font-size: 16px; border-radius: 5px;">
+    	<option selected disabled>Select Language</option>
+    	<option value="1">ES - Spanish</option>
+    	<option value="2">EN - English</option>
+  	</select>
 	<br/>
+	<div class="input-group mb-3" style="width: 33%;">
+	  <input type="text" class="form-control" placeholder="Search movie genre..." aria-label="Search movie genre..." aria-describedby="button-addon2">
+	  <div class="input-group-append">
+		<button class="btn btn-outline-secondary" type="button" id="button-addon2">Search</button>
+	  </div>
+	</div>
+
 	Copyright (c)
 	</center>
 {% endblock %}
