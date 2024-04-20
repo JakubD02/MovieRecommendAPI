@@ -1,18 +1,18 @@
 {% extends 'base.html' %}
 {% block content %}
 	<center>
-	<h1>5 Polecanych filmów:</h1><br/><br/><br/>
+	<h1>5 recommended movies:</h1><br/>
 		<div class="dropdown-divider mt-4 mb-4"></div>
 
+		<h5>What language do you want to watch it in?
+</h5>
   	<select class="form-select" aria-label="Default select example" style="width: 33%; padding: 10px; font-size: 16px; border-radius: 5px;">
     	<option selected disabled>Select Language</option>
     	<option value="1">ES - Spanish</option>
     	<option value="2">EN - English</option>
   	</select>
-	<br/>
-  <div class="dropdown-divider mt-4 mb-4"></div>
 	<div class="container mt-5">
-	  <label for="genre-select">Movie Genres:</label>
+	  <h5><label for="genre-select">Select movie genres:</label></h5>
 	  <select id="genre-select" class="form-control" style="width: 33%;">
 		<option value="Fantasy Horror">Fantasy Horror</option>
 		<option value="Action">Action</option>
@@ -27,8 +27,10 @@
 		<option value="Crime">Crime</option>
 	  </select>
 	</div>
-  <div class="dropdown-divider mt-4 mb-4"></div>
 		<br/>
+		<br/>
+		<h5>Search for a description or main character of a movie!
+</h5>
 	<div class="input-group mb-3" style="width: 33%;">
 	  <input type="text" class="form-control" placeholder="Search movie genre..." aria-label="Search movie genre..." aria-describedby="button-addon2">
 	  <div class="input-group-append">
@@ -36,8 +38,19 @@
 	  </div>
 	</div>
 		<br/>
+		  <div class="dropdown-divider mt-4 mb-4"></div>
+		<h5>Example movies:</h5>
+		<ol>
+			<li>.</li>
+			<li>.</li>
+			<li>.</li>
+			<li>.</li>
+			<li>.</li>
+
+		</ol>
 		<br/>
-		<br/>
+				  <div class="dropdown-divider mt-4 mb-4"></div>
+
 		<br/>
 
 	Copyright (c)
