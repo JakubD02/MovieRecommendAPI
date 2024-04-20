@@ -2,18 +2,43 @@
 {% block content %}
 	<center>
 	<h1>5 Polecanych filmów:</h1><br/><br/><br/>
+		<div class="dropdown-divider mt-4 mb-4"></div>
+
   	<select class="form-select" aria-label="Default select example" style="width: 33%; padding: 10px; font-size: 16px; border-radius: 5px;">
     	<option selected disabled>Select Language</option>
     	<option value="1">ES - Spanish</option>
     	<option value="2">EN - English</option>
   	</select>
 	<br/>
+  <div class="dropdown-divider mt-4 mb-4"></div>
+	<div class="container mt-5">
+	  <label for="genre-select">Movie Genres:</label>
+	  <select id="genre-select" class="form-control" style="width: 33%;">
+		<option value="Fantasy Horror">Fantasy Horror</option>
+		<option value="Action">Action</option>
+		<option value="Romance">Romance</option>
+		<option value="Science Fiction">Science Fiction</option>
+		<option value="Comedy">Comedy</option>
+		<option value="Western">Western</option>
+		<option value="Documentary">Documentary</option>
+		<option value="Thriller">Thriller</option>
+		<option value="Music">Music</option>
+		<option value="History">History</option>
+		<option value="Crime">Crime</option>
+	  </select>
+	</div>
+  <div class="dropdown-divider mt-4 mb-4"></div>
+		<br/>
 	<div class="input-group mb-3" style="width: 33%;">
 	  <input type="text" class="form-control" placeholder="Search movie genre..." aria-label="Search movie genre..." aria-describedby="button-addon2">
 	  <div class="input-group-append">
 		<button class="btn btn-outline-secondary" type="button" id="button-addon2">Search</button>
 	  </div>
 	</div>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
 
 	Copyright (c)
 	</center>
