@@ -1,7 +1,9 @@
 import pandas as pd
 import numpy as np
-from entry import Entry, build_from_df_row
-from settings_constants import st, ct
+from .entry import Entry, build_from_df_row
+from .settings_constants import st, ct
+# from Frontend.movieRecommend.movieRecommend.entry import Entry, build_from_df_row
+# from Frontend.movieRecommend.movieRecommend.settings_constants import st, ct
 
 
 class Database:
@@ -16,8 +18,9 @@ class Database:
             x = np.ones(len(x))
         self.df[column_name] = (x - mmin) / (mmax - mmin)
 
+# MOVIES_DB = Database('Frontend\movieRecommend\movieRecommend\movies_api.py')
+MOVIES_DB = Database("C:\\Users\\jakub\\OneDrive\\Dokumenty\\GitHub\\MovieRecommendAPI4\\Frontend\\movieRecommend\\movieRecommend\\mymoviedb.csv")
 
-MOVIES_DB = Database("mymoviedb.csv")
 MOVIES_DB.normalize_column("Popularity")
 MOVIES_DB.normalize_column("Vote_Count")
 MOVIES_DB.normalize_column("Vote_Average")
@@ -44,7 +47,7 @@ def get_movies(
             score += evaluate_vote_count(int(row["Vote_Count"]))
             score += evaluate_vote_avg(float(row["Vote_Average"]))
             score += evaluate_language(target_language, str(row["Original_Language"]))
-            potential_recommend.append(build_from_df_row(row, score))
+            potential_recommend.append(build_from_df_row(row, round(score, 2)))  
     return sorted(potential_recommend, reverse=True)
 
 

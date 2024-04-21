@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% block content %}
+    <center>
+        <h1>5 recommended movies:</h1><br/>
+        <div class="dropdown-divider mt-4 mb-4"></div>
+
+        <form method="post">
+            {% csrf_token %}
+            <div class="selection-container" style="background-color: #f2f2f2; padding: 20px; border-radius: 10px; display: inline-block;">
+                <div class="mt-4">
+                    <h5>What language do you want to watch it in?*</h5>
+                    {{ form.language }}
+                </div>
+
+                <div class="mt-4">
+                    <h5><label for="genre-select">Select movie genres:*</label></h5>
+                    {{ form.genre }}
+                </div>
+
+    <div class="mt-4">
+    <h5>Enter movie description:</h5>
+    {{ form.description }}
+</div>
+                <br/></br>
+            <button type="submit" class="btn btn-primary">Submit</button>
+
+            </div>
+            <br/>
+            <em style="font-size: smaller;">*Restrict selection to a single language and movie genre.</em>
+            <br/><br/>
+        </form>
+
+        <h3>Example movies:</h3>
+        <ul style="list-style-type: none; padding: 0; text-align: center;">
+            {% for movie in recommended_movies %}
+                <li style="margin-bottom: 10px;">{{ movie }}</li>
+            {% endfor %}
+        </ul>
+        <br/>
+        <em style="font-size: smaller;">If you don't see anything, it means we don't have a video that meets your requirements!
+        </em>
+
+        <div class="dropdown-divider mt-4 mb-4"></div>
+        Copyright (c) 
+    </center>
+{% endblock %}
