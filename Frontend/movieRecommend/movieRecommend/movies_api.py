@@ -18,13 +18,12 @@ class Database:
             x = np.ones(len(x))
         self.df[column_name] = (x - mmin) / (mmax - mmin)
 
-# MOVIES_DB = Database('Frontend\movieRecommend\movieRecommend\movies_api.py')
+# MOVIES_DB = Database('Frontend\movieRecommend\movieRecommend\mymoviedb.csv')
 MOVIES_DB = Database("C:\\Users\\jakub\\OneDrive\\Dokumenty\\GitHub\\MovieRecommendAPI4\\Frontend\\movieRecommend\\movieRecommend\\mymoviedb.csv")
 
 MOVIES_DB.normalize_column("Popularity")
 MOVIES_DB.normalize_column("Vote_Count")
 MOVIES_DB.normalize_column("Vote_Average")
-
 
 def get_movies(
     target_gens: list[str] | None = None,

@@ -16,6 +16,7 @@ from .forms import LanguageGenreForm
 # os.chdir('MovieRecommendAPI3\MovieRecommend\movies_api')
 
 def home(request):
+    recommended_movies = []
     if request.method == 'POST':
         form = LanguageGenreForm(request.POST)
         if form.is_valid():
