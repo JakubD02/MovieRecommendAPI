@@ -1,61 +1,46 @@
 {% extends 'base.html' %}
 {% block content %}
-	<center>
-	<h1>5 recommended movies:</h1><br/>
-		<div class="dropdown-divider mt-4 mb-4"></div>
+    <center>
+        <h1>5 recommended movies:</h1><br/>
+        <div class="dropdown-divider mt-4 mb-4"></div>
 
-		<div class="selection-container" style="background-color: #f2f2f2; padding: 20px; border-radius: 10px; display: inline-block;">
-			<h5>What language do you want to watch it in?*</h5>
-		  	<select class="form-select" aria-label="Default select example" style="width: 100%; padding: 10px; font-size: 16px; border-radius: 5px;">
-		    	<option selected disabled>Select Language</option>
-		    	<option value="1">ES - Spanish</option>
-		    	<option value="2">EN - English</option>
-		  	</select>
+        <form method="post">
+            {% csrf_token %}
+            <div class="selection-container" style="background-color: #f2f2f2; padding: 20px; border-radius: 10px; display: inline-block;">
+                <div class="mt-4">
+                    <h5>What language do you want to watch it in?*</h5>
+                    {{ form.language }}
+                </div>
 
-		  	<div class="mt-4">
-		  		<h5><label for="genre-select">Select movie genres:*</label></h5>
-		  		<select id="genre-select" class="form-control" style="width: 100%;">
-					<option value="Fantasy Horror">Fantasy Horror</option>
-					<option value="Action">Action</option>
-					<option value="Romance">Romance</option>
-					<option value="Science Fiction">Science Fiction</option>
-					<option value="Comedy">Comedy</option>
-					<option value="Western">Western</option>
-					<option value="Documentary">Documentary</option>
-					<option value="Thriller">Thriller</option>
-					<option value="Music">Music</option>
-					<option value="History">History</option>
-					<option value="Crime">Crime</option>
-		  		</select>
-		  	</div>
+                <div class="mt-4">
+                    <h5><label for="genre-select">Select movie genres:*</label></h5>
+                    {{ form.genre }}
+                </div>
 
-		  	<div class="mt-4">
-		  		<h5>Search for a description or main character of a movie!</h5>
-				<div class="input-group" style="width: 100%;">
-				  <input type="text" class="form-control" placeholder="Search movie genre..." aria-label="Search movie genre..." aria-describedby="button-addon2">
-				  <div class="input-group-append">
-					<button class="btn btn-outline-secondary" type="button" id="button-addon2">Search</button>
-				  </div>
-				</div>
-		  	</div>
-		</div>
-		<br/>
-		<em style="font-size: smaller;">*Restrict selection to a single language and movie genre.</em>
-		<br/><br/>
-		<h3>Example movies:</h3>
-		<ol>
-			<li>.</li>
-			<li>.</li>
-			<li>.</li>
-			<li>.</li>
-			<li>.</li>
+    <div class="mt-4">
+    <h5>Enter movie description:</h5>
+    {{ form.description }}
+</div>
+                <br/></br>
+            <button type="submit" class="btn btn-primary">Submit</button>
 
-		</ol>
-		<br/>
-				  <div class="dropdown-divider mt-4 mb-4"></div>
+            </div>
+            <br/>
+            <em style="font-size: smaller;">*Restrict selection to a single language and movie genre.</em>
+            <br/><br/>
+        </form>
 
-		<br/>
-
-	Copyright (c)
-	</center>
+        <h3>Example movies:</h3>
+        <ol>
+            <li>.</li>
+            <li>.</li>
+            <li>.</li>
+            <li>.</li>
+            <li>.</li>
+        </ol>
+        <br/>
+        <div class="dropdown-divider mt-4 mb-4"></div>
+        <br/>
+        Copyright (c)
+    </center>
 {% endblock %}
